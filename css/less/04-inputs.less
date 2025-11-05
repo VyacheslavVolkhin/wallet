@@ -203,6 +203,14 @@ select.form-input:required:invalid {
 	border-color: var(--clr-bg-light);
 	background-color: var(--clr-bg-light);
 	color: var(--clr-att);
+	&.text-dark {
+		&:not(:hover) {
+			color: var(--clr-base);
+			.button-ico, &:before, &:after {
+				filter: var(--filterAttToBase);
+			}
+		}
+	}
 	.button-ico {
 		filter: none;
 	}

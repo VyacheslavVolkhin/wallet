@@ -1,6 +1,18 @@
 /* ----------------------------------- *\
 			content styles
 \* ----------------------------------- */
+.table-box {
+	margin-bottom: var(--sectionMargin);
+	position: relative;
+	.actions-inner-wrap {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		.btn {
+			width: 100%;
+		}
+	}
+}
 .page-title-box {
 	color: var(--clr-light);
 	margin-bottom: var(--sectionMargin);
@@ -33,7 +45,7 @@
 	margin-bottom: 12px;
 	display: flex;
 	align-items: center;
-	font-size: 12px;
+	font-size: 13px;
 	font-weight: 600;
 	gap: 12px;
 	.title-wrap {
@@ -46,7 +58,7 @@
 	}
 }
 .title-box {
-	margin-bottom: var(--sectionMargin);
+	margin-bottom: 15px;
 	position: relative;
 }
 .buttons-box {
@@ -65,7 +77,7 @@
 		height: auto;
 		min-height: 100%;
 		border-radius: 12px;
-		font-size: 12px;
+		font-size: 13px;
 		font-weight: 600;
 		text-align: center;
 		flex-direction: column;
@@ -91,7 +103,7 @@
 		li {
 			&:last-child {
 				.btn-menu {
-					padding-bottom: 7px;
+					padding-bottom: 11px;
 					&:before {
 						display: none;
 					}
@@ -102,11 +114,11 @@
 	.btn-menu {
 		display: flex;
 		align-items: center;
-		font-size: 14px;
+		font-size: 15px;
 		line-height: 1.2;
 		color: var(--clr-base);
 		font-weight: 600;
-		padding: 7px 12px 8px 12px;
+		padding: 11px 12px 12px 12px;
 		position: relative;
 		gap: 12px;
 		&.type-arrow {
@@ -153,20 +165,22 @@
 		}
 		&.type-currency {
 			&:before {
-				left: 59px;
+				left: 64px;
+				display: none;
 			}
 			.button-ico {
-				width: 36px;
+				width: 40px;
 				aspect-ratio: 1;
 				border-radius: 50%;
 			}
 		}
 		&.type-card {
 			&:before {
-				left: 71px;
+				left: 80px;
+				display: none;
 			}
 			.button-ico {
-				width: 49px;
+				width: 56px;
 				aspect-ratio: 49/31;
 			}
 		}
@@ -174,7 +188,7 @@
 			content: "";
 			display: block;
 			position: absolute;
-			bottom: 0;left: 63px;right: 0;
+			bottom: 0;left: 72px;right: 0;
 			height: 1px;
 			background: var(--clr-border-light);
 		}
@@ -190,16 +204,19 @@
 			height: auto;
 			border-radius: 4px;
 			flex-shrink: 0;
-			width: 40px;
+			width: 48px;
+			img, svg {
+				width: 100%;
+			}
 		}
 		.button-title {
 			flex: 1;
 		}
 		.button-info {
 			display: block;
-			font-size: 12px;
+			font-size: 13px;
 			font-weight: 500;
-			margin: 2px 0 0 0;
+			margin: 4px 0 0 0;
 			color: var(--clr-light);
 		}
 		.btn {
@@ -239,7 +256,10 @@
 	}
 }
 .tbl-inner-wrap {
-	margin-bottom: var(--sectionMargin);
+	margin-bottom: 3.2rem;
+	&:last-child {
+		margin-bottom: 0;
+	}
 	&:last-child {
 		margin-bottom: 0;
 	}

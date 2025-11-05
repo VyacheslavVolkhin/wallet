@@ -9,7 +9,7 @@
 	--clr-succefull: #4BB34B;
 	--clr-progress: #FFA000;
 
-	--sectionMargin: 24px;
+	--sectionMargin: 32px;
 
 	--fsize: 14px;
 	--lhsize: 1.285;
@@ -147,6 +147,9 @@ h6, .h6-title {
     &:first-child {
         margin-top: 0;
     }
+	&:last-child {
+		margin-bottom: 0;
+	}
 }
 /* 32-28 */
 .page-title {
@@ -191,15 +194,17 @@ h6, .h6-title {
 }
 table {
 	width: 100%;
+	margin-bottom: 3.2rem;
 	thead {
 		th, td {
 			padding-top: 0;
 			padding-bottom: 12px;
 			border-bottom: 1px solid var(--clr-border-light);
-			font-size: 11px;
+			font-size: 12px;
 			font-weight: 500;
 			text-transform: uppercase;
 			color: var(--clr-light);
+			height: auto;
 		}
 	}
 	tbody {
@@ -207,6 +212,12 @@ table {
 			&:first-child {
 				th, td {
 					padding-top: 16px;
+				}
+			}
+			&:last-child {
+				th, td {
+					padding-bottom: 18px;
+					border-bottom: 1px solid var(--clr-border-light);
 				}
 			}
 		}
@@ -228,7 +239,7 @@ table {
 	}
 	.td-title {
 		display: block;
-		font-size: 11px;
+		font-size: 12px;
 		text-transform: uppercase;
 		color: var(--clr-light);
 	}
