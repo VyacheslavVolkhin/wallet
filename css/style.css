@@ -1682,6 +1682,18 @@ select.form-input:required:invalid {
 .button-light.button-border:not(:hover) {
   background-color: transparent;
 }
+.button-arrow .button-title:after {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  margin: -3px 0 0 2px;
+  width: 24px;
+  height: 24px;
+  position: relative;
+  background: url(../img/icons/arrow-menu.svg) center no-repeat;
+  background-size: 26px auto;
+  transform: rotate(90deg);
+}
 .btn-action-ico {
   min-width: 0;
   border-radius: 0;
