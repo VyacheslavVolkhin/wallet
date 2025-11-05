@@ -190,6 +190,7 @@
 			position: absolute;
 			bottom: 0;left: 72px;right: 0;
 			height: 1px;
+			display: none;
 			background: var(--clr-border-light);
 		}
 		
@@ -326,17 +327,17 @@
 @media (min-width: 1024px) {
 	.content-outer-wrap {
 		display: flex;
-		gap: 3.2rem;
+		gap: 5.4rem;
 	}
 	.side-wrap {
-		width: 26rem;
+		width: 240px;
 		flex-shrink: 0;
 		order: 1;
 	}
 	.content-wrap {
 		flex: 1;
 		order: 2;
-		width: calc(100% - 29.2rem);
-		max-width: 670px;
+		width: calc(100% - 5.4rem - 240px);
+		max-width: 691px;
 	}
 }
