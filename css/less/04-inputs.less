@@ -348,22 +348,9 @@ select.form-input:required:invalid {
         }
     }
     &.ico-close {
-        &:after, &:before {
-            width: 20px;
-            height: 2px;
-            top: 50%;
-            left: 50%;
-            bottom: auto;
-            right: auto;
-            margin: -1px 0 0 -10px;
-            background: var(--clr-base);
-        }
-        &:before {
-            .t-rotate(45deg);
-        }
-        &:after {
-            .t-rotate(-45deg);
-        }
+		&:before {
+			background-image: url(../img/icons/cross.svg);
+		}
     }
     &.button-soc {
         img, svg {

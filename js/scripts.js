@@ -6,6 +6,16 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 
 
+	//menu mobile toggle
+	const menuButtons = document.querySelectorAll('.js-menu-toggle');
+	menuButtons.forEach(button => {
+		button.addEventListener('click', function(e) {
+			e.preventDefault();
+			document.body.classList.toggle('menu-show');
+		});
+	});
+
+
 	//btn tgl and add
 	let tglButtons = document.querySelectorAll('.js-btn-tgl')
 	let addButtons = document.querySelectorAll('.js-btn-add')
@@ -51,7 +61,6 @@ document.addEventListener("DOMContentLoaded", function() {
 	const wrapWidth = document.querySelector('.wrap').offsetWidth
 	const bodyElem = document.querySelector('body')
 	function popupElementsClear() {
-		document.body.classList.remove('menu-show')
 		document.body.classList.remove('filter-show')
 		document.body.classList.remove('search-show')
 		popupElements.forEach(element => element.classList.remove('popup-right'))

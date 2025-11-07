@@ -169,7 +169,7 @@
 .elm-overlay {
     display: none;
     animation: fadein ease 0.2s;
-    background: fade(#000, 80);
+    background: rgba(0, 0, 0, 0.30);
     position: fixed;
     top: 0;
     bottom: 0;
@@ -199,6 +199,13 @@
 }
 .elm-verify {
 	position: relative;
+	&.verify-no {
+		&:before {
+			background-image: url(../img/icons/verify-no.svg);
+			background-color: #fff;
+			border-radius: 50%;
+		}
+	}
 	&:before {
 		content: "";
 		display: block;
