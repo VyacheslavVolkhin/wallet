@@ -1,12 +1,31 @@
 /* ----------------------------------- *\
 			inputs elements styles
 \* ----------------------------------- */
+[placeholder]::-webkit-input-placeholder {color: var(--clr-light);}
+[placeholder]:-moz-placeholder {color: var(--clr-light);}
+[placeholder]::-moz-placeholder {color: var(--clr-light);}
+[placeholder]:-ms-input-placeholder {color: var(--clr-light);}
 .form-input[placeholder] {
     text-overflow: ellipsis;
 }
 .form-input {
+	height: 48px;
+	border-radius: var(--mainRadius);
+	background: var(--clr-bg-light);
+	border: 1px solid var(--clr-bg-light);
+	padding: 0 11px;
+	font-size: 13px;
+	font-weight: 500;
+	column-rule: var(--clr-base);
     text-overflow: ellipsis;
 	&:focus, &:not(:placeholder-shown), &.inp-valid {
+	}
+	&.inp-error {
+		border-color: var(--clr-alert) !important;
+		&[placeholder]::-webkit-input-placeholder {color: var(--clr-alert);}
+		&[placeholder]:-moz-placeholder {color: var(--clr-alert);}
+		&[placeholder]::-moz-placeholder {color: var(--clr-alert);}
+		&[placeholder]:-ms-input-placeholder {color: var(--clr-alert);}
 	}
 }
 textarea.form-input {
@@ -59,7 +78,7 @@ select.form-input:required:invalid {
 .btn {
 	height: 44px;
 	padding: 0 15px;
-	border-radius: 12px;
+	border-radius: var(--mainRadius);
 	font-size: 13px;
 	font-weight: 600;
 	color: #fff;
@@ -82,6 +101,11 @@ select.form-input:required:invalid {
         width: var(--icoSize);
         height: var(--icoSize);
         transition: all ease 0.2s;
+		&.btn-action-ico {
+			&:after {
+				opacity: 0;
+			}
+		}
     }
     .button-title {
         &[data-title] {
@@ -96,6 +120,16 @@ select.form-input:required:invalid {
         }
     }
     &.active {
+		.button-ico {
+			&.btn-action-ico {
+				&:after {
+					opacity: 1;
+				}
+				&:before {
+					opacity: 0;
+				}
+			}
+		}
         .button-title {
             &[data-title-active] {
                 &:before {
@@ -146,6 +180,33 @@ select.form-input:required:invalid {
 		width: auto;
 		padding: 0;
 	}
+	&[disabled], &.button-disabled {
+		opacity: 0.3;
+		pointer-events: none;
+	}
+}
+.button-transparent {
+	background: none;
+	border: none;
+	color: var(--clr-att);
+	.button-ico {
+		filter: none;
+	}
+	&:hover {
+		background: none;
+		color: var(--clr-att-second);
+		.button-ico {
+			filter: var(--filterAttToHover);
+		}
+	}
+}
+.button-alert {
+	background-color: var(--clr-alert);
+	border-color: var(--clr-alert);
+	&:hover {
+		background-color: #FF3347+#111;
+		border-color: #FF3347+#111;
+	}
 }
 .button-border {
 	&:not(:hover) {
@@ -173,6 +234,7 @@ select.form-input:required:invalid {
 	border: none;
 	border-radius: 0;
 	color: var(--clr-base);
+	font-weight: inherit;
 	font-size: 1em;
 	&.button-link-att {
 		color: var(--clr-att);
@@ -199,18 +261,10 @@ select.form-input:required:invalid {
 	}
 }
 
-.button-light {
+.button-light, .button-white {
 	border-color: var(--clr-bg-light);
 	background-color: var(--clr-bg-light);
-	color: var(--clr-att);
-	&.text-dark {
-		&:not(:hover) {
-			color: var(--clr-base);
-			.button-ico, &:before, &:after {
-				filter: var(--filterAttToBase);
-			}
-		}
-	}
+	color: var(--clr-base);
 	.button-ico {
 		filter: none;
 	}
@@ -226,6 +280,16 @@ select.form-input:required:invalid {
 		&:not(:hover) {
 			background-color: transparent;
 		}
+	}
+}
+.button-white {
+	background-color: #fff;
+	border-color: #fff;
+	color: var(--clr-att);
+	&:hover {
+		background-color: var(--clr-bg-light);
+		border-color: var(--clr-bg-light);
+		color: var(--clr-att-second);
 	}
 }
 .button-arrow {
@@ -299,6 +363,24 @@ select.form-input:required:invalid {
 	&.ico-sort {
 		&:before {
 			background-image: url(../img/icons/sort.svg);
+		}
+	}
+	&.ico-trash {
+		&:before {
+			background-image: url(../img/icons/trash.svg);
+		}
+	}
+	&.ico-copy {
+		&:before {
+			background-image: url(../img/icons/copy.svg);
+		}
+	}
+	&.ico-fav-toggle {
+		&:before {
+			background-image: url(../img/icons/fav.svg);
+		}
+		&:after {
+			background-image: url(../img/icons/fav-active.svg);
 		}
 	}
     &.ico-arrow {
@@ -378,6 +460,20 @@ select.form-input:required:invalid {
 		&:after {
 			background-image: url(../img/icons/close.svg);
 		}
+	}
+}
+.btn-action-app {
+	display: block;
+	position: relative;
+	line-height: 1;
+	flex-shrink: 0;
+	transition: all ease 0.2s;
+	img, svg {
+		display: block;
+		width: 100%;
+	}
+	&:hover {
+		opacity: 0.8;
 	}
 }
 .btn-action-icon {

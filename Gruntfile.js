@@ -16,9 +16,12 @@ module.exports = function (grunt) {
                         scripts: '<%= fixturesPath %>/**/scripts.html',
                         head: '<%= fixturesPath %>/**/head.html',
                         header: '<%= fixturesPath %>/**/header.html',
+                        headernologin: '<%= fixturesPath %>/**/headernologin.html',
                         footer: '<%= fixturesPath %>/**/footer.html',
+                        footernologin: '<%= fixturesPath %>/**/footernologin.html',
                         popups: '<%= fixturesPath %>/**/popups.html',
                         nav: '<%= fixturesPath %>/**/nav.html',
+                        phone: '<%= fixturesPath %>/**/phone.html',
                     },
                     data: {
                         version: "0.1.0",
