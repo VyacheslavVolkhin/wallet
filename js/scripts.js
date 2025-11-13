@@ -278,6 +278,22 @@ document.addEventListener("DOMContentLoaded", function() {
 		event.stopPropagation();
 		});
 	});
+	
+	document.querySelector('.popup-outer-box').addEventListener('click', function(event) {
+    const popupBoxes = document.querySelectorAll('.popup-box');
+    let clickedInside = false;
+    popupBoxes.forEach(box => {
+        if (box.contains(event.target)) {
+            clickedInside = true;
+        }
+    });
+    if (!clickedInside) {
+        popupBoxes.forEach(box => {
+            box.classList.remove('active');
+        });
+        document.body.classList.remove('popup-open');
+    }
+});
 
 
 })
