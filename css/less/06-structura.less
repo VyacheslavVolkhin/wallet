@@ -288,7 +288,14 @@ html.with-fancybox body.hide-scrollbar {
 	}
 	.button-link {
 		padding: 0;
-		font-size: 14px;
+		font-size: 15px;
+		font-weight: 500;
+		.button-ico {
+			width: 28px;height: 28px;
+			img, svg {
+				width: 100%;
+			}
+		}
 	}
 	.elm-verify {
 		&:before {
@@ -309,7 +316,7 @@ html.with-fancybox body.hide-scrollbar {
 	display: block;
 	position: relative;
 	margin-bottom: 5rem;
-	font-size: 14px;
+	font-size: 15px;
 	line-height: 18px;
 	font-weight: 600;
 	color: var(--clr-light);
@@ -372,7 +379,7 @@ html.with-fancybox body.hide-scrollbar {
 			transition: all ease 0.2s;
 			filter: var(--filterAttToLight);
 			flex-shrink: 0;
-			width: 24px;height: 24px;
+			width: 28px;height: 28px;
 		}
 		.button-title {
 			display: block;
@@ -759,10 +766,10 @@ html.with-fancybox body.hide-scrollbar {
 			.popup-menu-wrap {
 				padding-top: 10px;
 				.btn-menu {
-					font-size: 13px;
+					font-size: 15px;
 					min-height: 44px;
 					.button-ico {
-						width: 24px;height: 24px;
+						width: 28px;height: 28px;
 					}
 				}
 				.menu {
@@ -777,10 +784,11 @@ html.with-fancybox body.hide-scrollbar {
 					width: 32px;height: 32px;
 				}
 				.user-title {
-					font-size: 13px;
+					font-size: 15px;
+					margin-bottom: 3px;
 				}
 				.user-veryfy {
-					font-size: 12px;
+					font-size: 14px;
 					.elm-verify {
 						overflow: hidden;
 						width: 14px;height: 14px;
@@ -793,8 +801,9 @@ html.with-fancybox body.hide-scrollbar {
 			}
 			.popup-button-wrap {
 				.btn {
-					height: 34px;
-					font-size: 13px;
+					height: 40px;
+					border-radius: 12px;
+					font-size: 14px;
 					font-weight: 600;
 				}
 			}
