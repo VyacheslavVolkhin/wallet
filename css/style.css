@@ -2190,6 +2190,8 @@ html.with-fancybox body.hide-scrollbar {
   font-size: 12px;
   font-weight: 500;
   color: var(--clr-light);
+  -ms-flex-pack: center;
+      justify-content: center;
 }
 .form-main-box .frm-title-action {
   -ms-flex-negative: 0;
@@ -2937,15 +2939,39 @@ html.with-fancybox body.hide-scrollbar {
   -ms-flex: 1;
       flex: 1;
 }
-.menu-box .btn-menu .button-info {
+.menu-box .btn-menu .button-info,
+.menu-box .btn-menu .button-link-action {
   display: block;
   font-size: 13px;
   font-weight: 500;
   margin: 4px 0 8px 0;
   color: var(--clr-light);
 }
-.menu-box .btn-menu .button-info:last-child {
+.menu-box .btn-menu .button-info:last-child,
+.menu-box .btn-menu .button-link-action:last-child {
   margin-bottom: 0;
+}
+.menu-box .btn-menu .button-link-action {
+  display: block;
+  position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  height: 16px;
+  line-height: 16px;
+}
+.menu-box .btn-menu .button-link-action a {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .menu-box .btn-menu .elm-verify-text {
   margin-right: 17px;
@@ -3128,24 +3154,45 @@ html.with-fancybox body.hide-scrollbar {
   font-weight: 500;
 }
 @media (max-width: 1023px) {
-  .page-steps-box {
-    margin-left: -8px;
-    margin-right: -8px;
-  }
-  .page-steps-box .menu {
-    overflow-x: auto;
-    overflow-y: hidden;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+  .list-box,
+  .tabs-buttons-box {
     margin-left: calc(var(--paddingContainer) * -1);
     margin-right: calc(var(--paddingContainer) * -1);
     padding-left: var(--paddingContainer);
     padding-right: var(--paddingContainer);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
   }
-  .page-steps-box .menu::-webkit-scrollbar {
+  .list-box::-webkit-scrollbar,
+  .tabs-buttons-box::-webkit-scrollbar {
     width: 0;
     height: 0;
   }
+  .list-box .menu,
+  .tabs-buttons-box .menu {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  /* .page-steps-box {
+		margin-left: -8px;
+		margin-right: -8px;
+		.menu {
+			overflow-x: auto;
+			overflow-y: hidden;
+			scrollbar-width: none;
+			-ms-overflow-style: none;
+			margin-left: calc(var(--paddingContainer) * -1);
+			margin-right: calc(var(--paddingContainer) * -1);
+			padding-left: var(--paddingContainer);
+			padding-right: var(--paddingContainer);
+			&::-webkit-scrollbar {
+				width: 0;
+				height: 0;
+			}
+		}
+	} */
   .tbl-inner-wrap {
     overflow-x: auto;
     overflow-y: hidden;
@@ -3207,6 +3254,26 @@ html.with-fancybox body.hide-scrollbar {
   }
 }
 @media (max-width: 639px) {
+  .page-steps-box .menu {
+    -ms-flex-direction: column;
+        flex-direction: column;
+    gap: 20px 0;
+    text-align: center;
+  }
+  .page-steps-box .menu:before {
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    right: auto;
+    margin: 0;
+    height: auto;
+    width: 1px;
+    background: var(--clr-border-light);
+    border: none;
+  }
+  .page-steps-box .li-title {
+    display: inline-block;
+  }
   .panel-profile-box {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
@@ -3235,25 +3302,31 @@ html.with-fancybox body.hide-scrollbar {
   }
 }
 @media (max-width: 479px) {
-  .menu-box .btn-menu {
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    gap: 8px 12px;
-  }
-  .menu-box .btn-menu > .button-title {
-    -ms-flex: 0 0 auto;
-        flex: 0 0 auto;
-    width: 100%;
-  }
-  .menu-box .btn-menu.type-icon > .button-title {
-    width: calc(100% - 28px - 12px);
-  }
-  .menu-box .btn-menu.type-currency > .button-title {
-    width: calc(100% - 40px - 12px);
-  }
-  .menu-box .btn-menu.type-card > .button-title {
-    width: calc(100% - 56px - 12px);
-  }
+  /* .menu-box {
+		.btn-menu {
+			flex-wrap: wrap;
+			gap: 8px 12px;
+			&>.button-title {
+				flex: 0 0 auto;
+				width: 100%;
+			}
+			&.type-icon {
+				&>.button-title {
+					width: calc(100% - 28px - 12px);
+				}
+			}
+			&.type-currency {
+				&>.button-title {
+					width: calc(100% - 40px - 12px);
+				}
+			}
+			&.type-card {
+				&>.button-title {
+					width: calc(100% - 56px - 12px);
+				}
+			}
+		}
+	} */
   .form-inner-wrap .field-half {
     width: 100%;
   }

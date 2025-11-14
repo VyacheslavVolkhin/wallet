@@ -311,6 +311,7 @@
 		font-size: 12px;
 		font-weight: 500;
 		color: var(--clr-light);
+		justify-content: center;
 	}
 	.frm-title-action {
 		flex-shrink: 0;
@@ -1026,7 +1027,7 @@
 		.button-title {
 			flex: 1;
 		}
-		.button-info {
+		.button-info, .button-link-action {
 			display: block;
 			font-size: 13px;
 			font-weight: 500;
@@ -1034,6 +1035,28 @@
 			color: var(--clr-light);
 			&:last-child {
 				margin-bottom: 0;
+			}
+		}
+		.button-link-action {
+			display: block;
+			position: relative;
+			max-width: 100%;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			height: 16px;
+			line-height: 16px;
+			a {
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				display: block;
+				max-width: 100%;
+				overflow: hidden;
+				text-overflow: ellipsis;
+				white-space: nowrap;
 			}
 		}
 		.elm-verify-text {
@@ -1220,7 +1243,24 @@
 	}
 }
 @media (max-width: 1023px) {
-	.page-steps-box {
+	.list-box, .tabs-buttons-box {
+		margin-left: calc(var(--paddingContainer) * -1);
+		margin-right: calc(var(--paddingContainer) * -1);
+		padding-left: var(--paddingContainer);
+		padding-right: var(--paddingContainer);
+		overflow-x: auto;
+		overflow-y: hidden;
+		scrollbar-width: none;
+		-ms-overflow-style: none;
+		&::-webkit-scrollbar {
+			width: 0;
+			height: 0;
+		}
+		.menu {
+			flex-wrap: nowrap;
+		}
+	}
+	/* .page-steps-box {
 		margin-left: -8px;
 		margin-right: -8px;
 		.menu {
@@ -1237,7 +1277,7 @@
 				height: 0;
 			}
 		}
-	}
+	} */
 	.tbl-inner-wrap {
 		overflow-x: auto;
 		overflow-y: hidden;
@@ -1303,6 +1343,24 @@
 	}
 }
 @media (max-width: 639px) {
+	.page-steps-box {
+		.menu {
+			flex-direction: column;
+			gap: 20px 0;
+			text-align: center;
+			&:before {
+				left: 50%;top: 0;bottom: 0;right: auto;
+				margin: 0;
+				height: auto;
+				width: 1px;
+				background: var(--clr-border-light);
+				border: none;
+			}
+		}
+		.li-title {
+			display: inline-block;
+		}
+	}
 	.panel-profile-box {
 		flex-wrap: wrap;
 		.info-inner-wrap {
@@ -1338,7 +1396,7 @@
 	}
 }
 @media (max-width: 479px) {
-	.menu-box {
+	/* .menu-box {
 		.btn-menu {
 			flex-wrap: wrap;
 			gap: 8px 12px;
@@ -1362,7 +1420,7 @@
 				}
 			}
 		}
-	}
+	} */
 	.form-inner-wrap {
 		.field-half {
 			width: 100%;
