@@ -600,6 +600,10 @@ html.with-fancybox body.hide-scrollbar {
 .header .user-inner-wrap .elm-photo svg {
   z-index: 3;
 }
+.header .user-inner-wrap.elm-verify-text:before,
+.header .user-inner-wrap.elm-verify:before {
+  z-index: 7;
+}
 .header .user-popup-block {
   display: none;
   animation: fadein ease 0.2s;
@@ -858,6 +862,10 @@ html.with-fancybox body.hide-scrollbar {
       flex-shrink: 0;
   width: 28px;
   height: 28px;
+}
+.nav .btn-menu .button-ico img,
+.nav .btn-menu .button-ico svg {
+  width: 100%;
 }
 .nav .btn-menu .button-title {
   display: block;

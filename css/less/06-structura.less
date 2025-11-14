@@ -156,6 +156,9 @@ html.with-fancybox body.hide-scrollbar {
 				z-index: 3;
 			}
 		}
+		&.elm-verify-text:before, &.elm-verify:before {
+			z-index: 7;
+		}
 	}
 	.user-popup-block {
 		display: none;
@@ -398,6 +401,9 @@ html.with-fancybox body.hide-scrollbar {
 			filter: var(--filterAttToLight);
 			flex-shrink: 0;
 			width: 28px;height: 28px;
+			img, svg {
+				width: 100%;
+			}
 		}
 		.button-title {
 			display: block;
