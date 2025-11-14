@@ -3290,12 +3290,11 @@ html.with-fancybox body.hide-scrollbar {
   }
 }
 @media (min-width: 1200px) {
-  .content-wrap {
-    max-width: calc(86% - 5.4rem - 240px);
-    width: 884px;
-    -ms-flex: 0 0 884px;
-        flex: 0 0 884px;
-  }
+  /* .content-wrap {
+		max-width: calc(86% - 5.4rem - 240px);
+		width: 884px;
+		flex: 0 0 884px;
+	} */
 }
 /* ----------------------------------- *\
 			inputs elements styles
