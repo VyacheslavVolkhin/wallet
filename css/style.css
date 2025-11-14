@@ -806,7 +806,7 @@ html.with-fancybox body.hide-scrollbar {
   -ms-flex-align: center;
       align-items: center;
   gap: 12px;
-  padding: 8px;
+  padding: 8px 12px;
   color: inherit;
   transition: all ease 0.2s;
   border-radius: var(--mainRadius);
@@ -845,7 +845,7 @@ html.with-fancybox body.hide-scrollbar {
   display: block;
 }
 .nav .btn-menu .button-title:first-child {
-  padding-left: 36px;
+  padding-left: 44px;
 }
 .nav .btn-menu:hover,
 .nav .btn-menu.menu-active {
