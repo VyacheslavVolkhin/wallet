@@ -139,6 +139,23 @@ html.with-fancybox body.hide-scrollbar {
 				z-index: 2;
 			}
 		}
+		.elm-photo {
+			&:after {
+				content: "";
+				display: block;
+				width: 28px;
+				height: 28px;
+				position: absolute;
+				background: url(../img/icons/personal.svg) center no-repeat;
+				background-size: 100% auto;
+				top: 50%;left: 50%;
+				margin: -14px 0 0 -14px;
+				filter: var(--filterAttToBase);
+			}
+			img, svg {
+				z-index: 3;
+			}
+		}
 	}
 	.user-popup-block {
 		display: none;

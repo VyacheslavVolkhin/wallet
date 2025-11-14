@@ -583,6 +583,23 @@ html.with-fancybox body.hide-scrollbar {
   display: block;
   z-index: 2;
 }
+.header .user-inner-wrap .elm-photo:after {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 28px;
+  position: absolute;
+  background: url(../img/icons/personal.svg) center no-repeat;
+  background-size: 100% auto;
+  top: 50%;
+  left: 50%;
+  margin: -14px 0 0 -14px;
+  filter: var(--filterAttToBase);
+}
+.header .user-inner-wrap .elm-photo img,
+.header .user-inner-wrap .elm-photo svg {
+  z-index: 3;
+}
 .header .user-popup-block {
   display: none;
   animation: fadein ease 0.2s;
