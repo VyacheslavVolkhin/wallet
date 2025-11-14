@@ -3291,6 +3291,9 @@ html.with-fancybox body.hide-scrollbar {
 @media (min-width: 1200px) {
   .content-wrap {
     max-width: calc(86% - 5.4rem - 240px);
+    width: 884px;
+    -ms-flex: 0 0 884px;
+        flex: 0 0 884px;
   }
 }
 /* ----------------------------------- *\
@@ -3559,8 +3562,8 @@ select.form-input:required:invalid {
 }
 .button-light:hover,
 .button-white:hover {
-  background-color: var(--clr-bg-light);
-  border-color: var(--clr-bg-light);
+  background-color: var(--clr-border-light);
+  border-color: var(--clr-border-light);
   color: var(--clr-att-second);
 }
 .button-light:hover .button-ico,
