@@ -12,7 +12,7 @@
   --sectionMargin: 32px;
   --sectionMarginMain: 24px;
   --sectionMarginSmall: 12px;
-  --fsize: 14px;
+  --fsize: 15px;
   --lhsize: 1.285;
   --mbsize: 1.285em;
   --mainRadius: 12px;
@@ -395,7 +395,7 @@ table .td-button-sort:not(:hover):after {
     --paddingContainer: 30px;
   }
   .page-title {
-    font-size: 28px;
+    font-size: 32px;
   }
   .h1-title,
   h1 {
