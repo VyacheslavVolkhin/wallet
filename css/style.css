@@ -18,7 +18,7 @@
   --mainRadius: 12px;
   --icoSize: 24px;
   --min: 360px;
-  --max: 100%;
+  --max: 1450px;
   --paddingContainer: 16px;
   --filterBlack: brightness(0) grayscale(1);
   --filterWhite: brightness(0) invert(1);
@@ -547,6 +547,7 @@ html.with-fancybox body.hide-scrollbar {
   z-index: 100;
 }
 .header .inner-wrap {
+  max-width: 100%;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-align: center;
