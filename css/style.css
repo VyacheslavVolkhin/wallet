@@ -18,7 +18,7 @@
   --mainRadius: 12px;
   --icoSize: 24px;
   --min: 360px;
-  --max: 1360px;
+  --max: 100%;
   --paddingContainer: 16px;
   --filterBlack: brightness(0) grayscale(1);
   --filterWhite: brightness(0) invert(1);
@@ -3286,6 +3286,11 @@ html.with-fancybox body.hide-scrollbar {
         order: 2;
     width: calc(100% - 5.4rem - 240px);
     max-width: 691px;
+  }
+}
+@media (min-width: 1200px) {
+  .content-wrap {
+    max-width: calc(86% - 5.4rem - 240px);
   }
 }
 /* ----------------------------------- *\
