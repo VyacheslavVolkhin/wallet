@@ -2412,7 +2412,7 @@ html.with-fancybox body.hide-scrollbar {
   border-radius: 30px;
   transition: all ease 0.2s;
   text-align: center;
-  padding: 6px;
+  padding: 12px 14px;
 }
 .page-steps-box .li-title.active {
   color: var(--clr-att);
@@ -3159,7 +3159,6 @@ html.with-fancybox body.hide-scrollbar {
   width: auto;
 }
 .form-inner-wrap .frm-field.field-auto .btn {
-  height: 48px;
   padding: 0 15px;
 }
 .form-inner-wrap .field-info-bottom {
@@ -3525,7 +3524,7 @@ html.with-fancybox body.hide-scrollbar {
   background: var(--clr-bg-light);
   border: 1px solid var(--clr-bg-light);
   padding: 0 11px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   column-rule: var(--clr-base);
   text-overflow: ellipsis;
@@ -3605,6 +3604,9 @@ select.form-input:required:invalid {
   background-color: var(--clr-att-second);
   border-color: var(--clr-att-second);
   color: #fff;
+}
+.btn.button-main {
+  height: 56px;
 }
 .btn .button-title-border {
   border-bottom: 1px solid;
@@ -4459,6 +4461,12 @@ select.form-input:required:invalid {
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2);
   border: 1px solid var(--clr-border-light);
   padding: 11px;
+}
+.frm-field-select-main .select-content-block .btn-select {
+  border-radius: 3px;
+}
+.frm-field-select-main .select-content-block .btn-select:hover {
+  background-color: var(--clr-bg-light);
 }
 .frm-field-select-main .menu {
   max-height: 212px;
