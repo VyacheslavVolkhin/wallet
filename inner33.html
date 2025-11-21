@@ -12,7 +12,10 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/fancybox.css">
     <link rel="stylesheet" href="./css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/flatpickr.min.css">
     <link rel="stylesheet" href="./css/style.min.css">
+    <script src="./js/flatpickr.js" defer></script>
+    <script src="./js/ru.js" defer></script>
     <script src="./js/swiper-bundle.min.js" defer></script>
     <script src="./js/multifiles.js" defer></script>
     <script src="./js/fancybox.umd.js" defer></script>
@@ -1041,6 +1044,7 @@
             <a href="" class="btn-popup-close btn-action-ico ico-close js-popup-close"></a>
             <div class="popup-title-wrap">
                 <div class="popup-title">Send money</div>
+                <p>Below the transaction details</p>
             </div>
             <div class="popup-content-wrap">
                 <!--menu-box-->
@@ -1549,7 +1553,7 @@
         <!-- /popup-panel-withdrawal-account -->
 
         <!-- popup-panel-notifications -->
-        <div class="popup-box popup-panel" id="popup-panel-notifications">
+        <div class="popup-box popup-panel panel-notifications" id="popup-panel-notifications">
             <a href="" class="btn-popup-close btn-action-ico ico-close js-popup-close"></a>
             <div class="popup-title-wrap">
                 <div class="popup-title">Notifications</div>
@@ -1620,7 +1624,7 @@
         <!-- /popup-panel-notifications -->
 
         <!-- popup-panel-notifications-empty -->
-        <div class="popup-box popup-panel" id="popup-panel-notifications-empty">
+        <div class="popup-box popup-panel panel-notifications" id="popup-panel-notifications-empty">
             <a href="" class="btn-popup-close btn-action-ico ico-close js-popup-close"></a>
             <div class="popup-title-wrap">
                 <div class="popup-title">Notifications</div>
@@ -1639,6 +1643,52 @@
         <!-- /popup-panel-notifications-empty -->
 
 
+
+
+        <!-- popup-top up button -->
+        <div class="popup-box" id="popup-topup">
+            <a href="" class="btn-popup-close btn-action-ico ico-close js-popup-close"></a>
+            <div class="popup-title-wrap">
+                <div class="popup-title">Top up EUR account</div>
+                <p>Below the transaction details</p>
+            </div>
+            <div class="popup-content-wrap">
+                <!--menu-box-->
+                <div class="menu-box">
+                    <ul class="menu">
+                        <li>
+                            <a href="" class="btn-menu type-currency type-arrow">
+                                <div class="button-ico">
+                                    <img src="./img/icons/bitcoin.svg" alt="">
+                                </div>
+                                <div class="button-title">Cryptocurrency <div class="button-info">Cryptocurrency transfers</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="btn-menu type-currency type-arrow">
+                                <div class="button-ico">
+                                    <img src="./img/icons/cards.svg" alt="">
+                                </div>
+                                <div class="button-title">Credit or Debit card <div class="button-info">Visa and Mastercard</div>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="btn-menu type-currency type-arrow">
+                                <div class="button-ico">
+                                    <img src="./img/icons/swift.svg" alt="">
+                                </div>
+                                <div class="button-title">Bank transfer <div class="button-info">SEPA</div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!--/menu-box-->
+            </div>
+        </div>
+        <!-- /popup-top up button -->
 
 
     </div>

@@ -16,6 +16,21 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 
 
+	//datepicker
+	flatpickr(".field-datepicker input", {
+		firstDayOfWeek: 0,
+		minDate: "today",
+		dateFormat: "d/m/y",
+		locale: "ru",
+		disable: [
+			function(date) {
+				// disable every multiple of 8
+				//return !(date.getDate() % 8);
+			}
+		]
+	});
+
+
 	//copy button
 	document.querySelectorAll('.js-btn-copy').forEach(function(btn) {
 		btn.addEventListener('click', function(e) {
@@ -242,44 +257,50 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
 
-	// Popups
-	let popupCurrent;
-	let popupsList = document.querySelectorAll('.popup-box')
-
-	document.querySelectorAll(".js-popup-open").forEach(function (element) {
-	element.addEventListener("click", function (e) {
-		document.body.classList.add("popup-open");
-		for (i=0;i<popupsList.length;i++) {
-			popupsList[i
-				].classList.remove("active");
-			}
-
-		popupCurrent = this.getAttribute("data-popup");
-		document
-		.querySelector(
-			`.popup-box[id="${popupCurrent}"
-			]`
-		)
-		.classList.add("active");
-
-		e.preventDefault();
-		e.stopPropagation();
-		return false;
-		});
-	});
-	document.querySelectorAll(".js-popup-close").forEach(function (element) {
-	element.addEventListener("click", function (event) {
-		document.body.classList.remove("popup-open");
-		for (i=0;i<popupsList.length;i++) {
-			popupsList[i
-				].classList.remove("active");
-			}
-		event.preventDefault();
-		event.stopPropagation();
-		});
-	});
 	
-	document.querySelector('.popup-outer-box').addEventListener('click', function(event) {
+
+	// Popups
+let popupCurrent;
+let popupsList = document.querySelectorAll('.popup-box')
+
+document.querySelectorAll(".js-popup-open").forEach(function (element) {
+    element.addEventListener("click", function (e) {
+        document.body.classList.add("popup-open");
+        for (i=0;i<popupsList.length;i++) {
+            popupsList[i].classList.remove("active");
+        }
+
+        popupCurrent = this.getAttribute("data-popup");
+        const popupElement = document.querySelector(`.popup-box[id="${popupCurrent}"]`);
+        popupElement.classList.add("active");
+
+        // Если есть атрибут data-popup-position="pos-button", позиционируем popup относительно кнопки
+        if (this.getAttribute("data-popup-position") === "pos-button") {
+            positionPopupRelativeToButton(this, popupElement);
+            popupElement.classList.add('popup-position'); // Добавляем класс
+        } else {
+            popupElement.classList.remove('popup-position'); // Убираем класс, если позиционирование не нужно
+        }
+
+        e.preventDefault();
+        e.stopPropagation();
+        return false;
+    });
+});
+
+document.querySelectorAll(".js-popup-close").forEach(function (element) {
+    element.addEventListener("click", function (event) {
+        document.body.classList.remove("popup-open");
+        for (i=0;i<popupsList.length;i++) {
+            popupsList[i].classList.remove("active");
+            popupsList[i].classList.remove('popup-position'); // Убираем класс при закрытии
+        }
+        event.preventDefault();
+        event.stopPropagation();
+    });
+});
+
+document.querySelector('.popup-outer-box').addEventListener('click', function(event) {
     const popupBoxes = document.querySelectorAll('.popup-box');
     let clickedInside = false;
     popupBoxes.forEach(box => {
@@ -290,10 +311,28 @@ document.addEventListener("DOMContentLoaded", function() {
     if (!clickedInside) {
         popupBoxes.forEach(box => {
             box.classList.remove('active');
+            box.classList.remove('popup-position'); // Убираем класс при клике вне попапа
         });
         document.body.classList.remove('popup-open');
     }
 });
+
+// Функция позиционирования popup относительно кнопки
+function positionPopupRelativeToButton(button, popup) {
+    // Получаем координаты и размеры кнопки относительно viewport
+    const buttonRect = button.getBoundingClientRect();
+    
+    // Рассчитываем позицию относительно viewport (без учета прокрутки)
+    const topPosition = buttonRect.bottom; // нижний край кнопки от верха viewport
+    const leftPosition = buttonRect.left + (buttonRect.width / 2); // центр кнопки от левого края viewport
+    
+    // Применяем стили к popup с фиксированным позиционированием
+    popup.style.position = 'fixed';
+    popup.style.top = topPosition + 'px';
+    popup.style.left = leftPosition + 'px';
+    popup.style.transform = 'none'; // Убираем возможные трансформации
+    popup.style.margin = '0'; // Убираем отступы
+}
 
 
 })

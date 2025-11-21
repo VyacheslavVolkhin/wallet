@@ -577,6 +577,7 @@
 			padding: 0 4px;
 			width: auto;
 			flex: 1;
+			position: relative;
 		}
 	}
 	.btn {
@@ -665,12 +666,20 @@
 	margin-bottom: var(--sectionMargin);
 	position: relative;
 	.items-wrap {
-		margin: 0 -6px;
-		gap: 12px 0;
+		margin: 0;
+		gap: 0;
 	}
 	.item-wrap {
 		width: 100%;
-		padding: 0 6px;
+		padding: 12px 0;
+		border-bottom: 1px solid var(--clr-border-light);
+		&:first-child {
+			padding-top: 0;
+		}
+		&:last-child {
+			padding-bottom: 0;
+			border-bottom: none;
+		}
 	}
 }
 .empty-box {
@@ -973,7 +982,7 @@
 		}
 		.button-total {
 			flex-shrink: 0;
-			font-size: 15px;
+			font-size: 20px;
 			font-weight: bold;
 			white-space: nowrap;
 			&.total-zero {
