@@ -13,6 +13,15 @@
 			margin-bottom: 0 !important;;
 		}
 	}
+	.panel-title-wrap {
+		font-weight: 500;
+		color: var(--clr-light);
+		margin-bottom: 16px;
+		.section-title {
+			color: var(--clr-base);
+			margin-bottom: 4px;
+		}
+	}
 }
 .info-card-box {
 	margin-bottom: var(--sectionMargin);
@@ -620,9 +629,12 @@
 	position: relative;
 	border-bottom: 1px solid var(--clr-border-light);
 	border-top: 1px solid var(--clr-border-light);
-	padding: 8px 0;
+	padding: 16px 0;
 	&.no-border {
 		border: none;
+	}
+	&.no-btop {
+		border-top: none;
 	}
 	.elm-row {
 		margin-bottom: 10px;
@@ -638,6 +650,9 @@
 	}
 	.section-title {
 		margin-bottom: 12px;
+	}
+	.details-title {
+		margin-bottom: 16px;
 	}
 }
 .links-box {
@@ -752,6 +767,8 @@
 	}
 }
 .menu-box {
+	overflow: hidden;
+	position: relative;
 	.title-panel-box {
 		padding: 12px 12px 0px 12px;
 		margin-bottom: 0;

@@ -1975,6 +1975,15 @@ html.with-fancybox body.hide-scrollbar {
 .info-panel-box > *:last-child {
   margin-bottom: 0 !important;
 }
+.info-panel-box .panel-title-wrap {
+  font-weight: 500;
+  color: var(--clr-light);
+  margin-bottom: 16px;
+}
+.info-panel-box .panel-title-wrap .section-title {
+  color: var(--clr-base);
+  margin-bottom: 4px;
+}
 .info-card-box {
   margin-bottom: var(--sectionMargin);
   position: relative;
@@ -2635,10 +2644,13 @@ html.with-fancybox body.hide-scrollbar {
   position: relative;
   border-bottom: 1px solid var(--clr-border-light);
   border-top: 1px solid var(--clr-border-light);
-  padding: 8px 0;
+  padding: 16px 0;
 }
 .details-box.no-border {
   border: none;
+}
+.details-box.no-btop {
+  border-top: none;
 }
 .details-box .elm-row {
   margin-bottom: 10px;
@@ -2654,6 +2666,9 @@ html.with-fancybox body.hide-scrollbar {
 }
 .details-box .section-title {
   margin-bottom: 12px;
+}
+.details-box .details-title {
+  margin-bottom: 16px;
 }
 .links-box {
   margin-bottom: var(--sectionMargin);
@@ -2765,6 +2780,10 @@ html.with-fancybox body.hide-scrollbar {
 }
 .list-box .menu:has(.elm-contact) {
   gap: 23px;
+}
+.menu-box {
+  overflow: hidden;
+  position: relative;
 }
 .menu-box .title-panel-box {
   padding: 12px 12px 0px 12px;
