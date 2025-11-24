@@ -1,6 +1,36 @@
 /* ----------------------------------- *\
 			forms elements styles
 \* ----------------------------------- */
+.frm-field-chat {
+	position: relative;
+	line-height: 1;
+	.form-input {
+		height: 48px;
+		border-radius: 12px;
+		border-color: var(--clr-bg-light);
+		background-color: var(--clr-bg-light);
+		padding: 0 80px 0 15px;
+		font-size: 12px;
+		font-weight: 500;
+		text-align: left;
+	}
+	.button-form-send, .frm-field-file-button {
+		width: 40px;height: 40px;
+		position: absolute;
+		top: 50%;right: 26px;
+		margin-top: -20px;
+		margin-right: -20px;
+		z-index: 2;
+	}
+	.button-form {
+		&:not(:hover) {
+			filter: var(--filterAttToLight);
+		}
+	}
+	.frm-field-file-button {
+		right: 58px;
+	}
+}
 .pagenav-box {
 	display: flex;
 	justify-content: center;

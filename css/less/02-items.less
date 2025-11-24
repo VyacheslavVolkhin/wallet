@@ -96,6 +96,76 @@
 		color: var(--clr-att);
 	}
 }
+.type-answer {
+	.elm-message {
+		background: var(--clr-bg-light);
+	}
+}
+.elm-message {
+	display: inline-block;
+	border-radius: 12px;
+	text-align: left;
+	text-align: left;
+	background: rgba(33, 105, 252, 0.10);;
+	padding: 8px;
+	max-width: 73%;
+	font-size: 13px;
+	font-weight: 500;
+	line-height: normal;
+	column-rule: var(--clr-base);
+	&.ms-read {
+		.ms-info {
+			&:after {
+				filter: none;
+			}
+		}
+	}
+	&.ms-unsend {
+		.ms-info {
+			&:after {
+				background-image: url(../img/icons/checks-one.svg);
+				background-size: 24px auto;
+				background-position: 0 center;
+			}
+		}
+	}
+	.ms-title {
+		margin-bottom: 2px;
+		font-weight: 600;
+		display: block;
+	}
+	.ms-info {
+		margin-top: 3px;
+		color: var(--clr-light);
+		font-size: 11px;
+		&:after {
+			content: "";
+			display: inline-block;
+			width: 16px;height: 14px;
+			vertical-align: middle;
+			background: url(../img/icons/checks.svg) center no-repeat;
+			background-size: 100% auto;
+			filter: var(--filterAttToLight);
+			transition: all ease 0.2s;
+			margin-left: 6px;
+		}
+	}
+	.ms-photo {
+		width: 120px;
+		border-radius: 12px;
+		margin-bottom: 2px;
+		display: block;
+		line-height: 0;
+		overflow: hidden;
+		img {
+			display: block;
+			width: 100%;
+		}
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
 :is([class^="item-tile"]) {
     &:hover {
         .elm-photo {
