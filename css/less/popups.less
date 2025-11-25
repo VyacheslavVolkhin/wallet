@@ -259,6 +259,7 @@ body.popup-open {
 	&.active {
 		display: block;
 	}
+	
 }
 .popup-chat {
 	&.popup-box {
@@ -287,6 +288,7 @@ body.popup-open {
 		}
 	}
 }
+
 .popup-chat-box {
 	display: flex;
 	flex-direction: column;
@@ -418,7 +420,74 @@ body.popup-open {
 	}
 }
 @media (min-width: 1024px) {
+	.popup-panel-d {
+		.popup-chat-box {
+			height: 100%;
+			.chat-panel-wrap {
+				flex: 1;
+				height: auto;
+				position: relative;
+			}
+			.scroll-inner-wrap {
+				position: absolute;
+				top: 12px;
+				bottom: 12px;
+				left: 4px;
+				right: 4px;
+				height: auto;
+			}
+		}
+	}
+	.popup-fix-box {
+		&:has(.popup-panel-d.active) {
+			top: 4rem;
+			width: 360px;
+		}
+	}
 	.popup-box {
+		&.popup-panel-d {
+			position: fixed;
+			top: 0;bottom: 0;right: 0;
+			width: 360px;
+			max-width: 90%;
+			border-radius: 12px;
+			flex-direction: column;
+			overflow: hidden;
+			.btn-popup-close {
+				&~.popup-title-wrap {
+					padding-right: 0;
+					min-height: 0;
+					&.title-center {
+						padding-right: 0;
+						padding-left: 0;
+					}
+				}
+			}
+			.popup-content-wrap {
+				flex: 1;
+				overflow-y: auto;
+				overflow-x: hidden;
+				scrollbar-width: none;
+				-ms-overflow-style: none;
+				&::-webkit-scrollbar {
+					width: 0;
+					height: 0;
+				}
+				&:has(.empty-box) {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+				}
+			}
+		}
+		&.popup-chat {
+			&.popup-panel-d {
+				position: relative;
+				height: 100%;
+				width: 100%;
+				max-width: 100%;
+			}
+		}
 		&.popup-position {
 			transform: translateX(-50%) !important;
 			margin-top: 8px !important;
