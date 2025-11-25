@@ -453,6 +453,17 @@ select.form-input:required:invalid {
 			background-image: url(../img/icons/cross.svg);
 		}
     }
+    &.ico-close-arrow {
+		&:before {
+			background-image: url(../img/icons/arrow-menu.svg);
+			transform: rotate(180deg);
+		}
+		&.active {
+			&:before {
+				transform: rotate(0deg);
+			}
+		}
+    }
     &.button-soc {
         img, svg {
             max-width: 100%;

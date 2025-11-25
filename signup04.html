@@ -1472,11 +1472,12 @@
 
 
     <!--popup-fix-box-->
-    <div class="popup-fix-box active">
+    <div class="popup-fix-box">
         <!-- popup chat -->
-        <div class="popup-box active popup-chat popup-panel-d" id="popup-chat">
+        <div class="popup-box active popup-chat" id="popup-chat">
             <div class="popup-title-wrap">
                 <div class="popup-title">Chat with support</div>
+                <a href="" class="btn-popup-close btn-action-ico ico-close-arrow" onclick="document.querySelector('.popup-fix-box').classList.remove('active');return false;"></a>
             </div>
             <div class="popup-content-wrap">
                 <form action="/" class="popup-chat-box">
@@ -1746,6 +1747,8 @@
         <!-- /popup chat -->
     </div>
     <!--/popup-fix-box-->
+
+    <a href="" class="btn btn-popup-chat" id="btn-popup-chat" onclick="document.querySelector('.popup-fix-box').classList.add('active');return false;"></a>
 
 </body>
 
