@@ -1333,7 +1333,7 @@ html.with-fancybox body.hide-scrollbar {
   -ms-flex-direction: column;
       flex-direction: column;
   min-height: 100%;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   border-radius: var(--mainRadius);
   border: 1px solid var(--clr-border-light);
@@ -2013,7 +2013,7 @@ html.with-fancybox body.hide-scrollbar {
   display: flex;
   margin: 0 -6px;
   gap: 12px 0;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   -ms-flex-pack: justify;
       justify-content: space-between;
